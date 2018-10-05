@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  api:
+    image: local/api
+    build:
+      context: .
+      dockerfile: Api/Dockerfile
+
+  razorprecompilationtest:
+    image: local/razorprecompilationtest
+    build:
+      context: .
+      dockerfile: RazorPrecompilationTest/Dockerfile
+
