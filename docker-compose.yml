@@ -7,9 +7,15 @@ services:
       context: .
       dockerfile: Api/Dockerfile
 
-  razorprecompilationtest:
+  website:
     image: local/razorprecompilationtest
     build:
       context: .
       dockerfile: RazorPrecompilationTest/Dockerfile
+
+  nginx:
+    image: nginx
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
 
