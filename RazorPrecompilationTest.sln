@@ -5,9 +5,14 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPrecompilationTest", "RazorPrecompilationTest\RazorPrecompilationTest.csproj", "{31118616-5636-4D2D-A43B-C56E3AEFB243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{84E236E5-B502-409F-86DA-B418CA61DCD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{84E236E5-B502-409F-86DA-B418CA61DCD2}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8E0A9516-07C8-4884-B7DD-F59BD229999A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{B086AC88-DC20-4F5E-BD67-DC6A278D65B2}"
+	ProjectSection(SolutionItems) = preProject
+		nginx\nginx.conf = nginx\nginx.conf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

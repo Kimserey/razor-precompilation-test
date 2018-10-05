@@ -7,7 +7,7 @@ services:
     ports:
       - "5100:80"
 
-  razorprecompilationtest:
+  website:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
@@ -16,4 +16,3 @@ services:
   nginx:
     ports:
       - "5500:80"
-
