@@ -6,7 +6,7 @@
     <ProjectGuid>8e0a9516-07c8-4884-b7dd-f59bd229999a</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>api</DockerServiceName>
+    <DockerServiceName>proxy</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
