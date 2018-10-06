@@ -3,18 +3,21 @@ version: '3.4'
 services:
   api:
     image: local/api
+    container_name: razor_api
     build:
       context: .
       dockerfile: Api/Dockerfile
 
   website:
     image: local/website
+    container_name: razor_website
     build:
       context: .
       dockerfile: RazorPrecompilationTest/Dockerfile
 
   proxy:
     image: local/proxy
+    container_name: razor_proxy_nginx
     build:
       context: .
       dockerfile: nginx/Dockerfile

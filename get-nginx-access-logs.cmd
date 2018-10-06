@@ -1,0 +1,1 @@
+docker container exec razor_proxy_nginx cat /var/log/nginx/app.access.log
