@@ -15,7 +15,7 @@ services:
       dockerfile: warmup/Dockerfile
     depends_on:
       - "api"
-    command: ["bash", "./wait-for-it.sh", "api/api/healthcheck:80", "--", "curl", "-o /dev/null", "-w %{time_total}\\n", "http://api/api/values"]
+    command: ["./wait-for-it.sh", "-s", "api:80/api/healthcheck", "--", "curl", "-o /dev/null", "-w %{time_total}\\n", "http://api/api/values"]
 
   website:
     container_name: razor-test-website
@@ -23,15 +23,15 @@ services:
       context: .
       dockerfile: RazorPrecompilationTest/Dockerfile
 
-  website-warmup:
-    image: razor-test/warmup
-    container_name: razor-test-website-warmup
-    build:
-      context: .
-      dockerfile: warmup/Dockerfile
-    depends_on:
-      - "website"
-    command: ["bash", "./wait-for-it.sh", "website/healthcheck:80", "--", "curl", "-o /dev/null", "-w %{time_total}\\n", "http://website/account/login"]
+  #website-warmup:
+  #  image: razor-test/warmup
+  #  container_name: razor-test-website-warmup
+  #  build:
+  #    context: .
+  #    dockerfile: warmup/Dockerfile
+  #  depends_on:
+  #    - "website"
+  #  command: ["bash", "./wait-for-it.sh", "website:80/healthcheck", "--", "curl", "-o /dev/null", "-w %{time_total}\\n", "http://website/account/login"]
 
   proxy:
     container_name: razor-test-proxy

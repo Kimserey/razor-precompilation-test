@@ -1,3 +1,5 @@
-FROM bash
+FROM alpine
 COPY ./warmup .
-CMD ["bash", "./wait-for-it.sh"]
+RUN apk add --no-cache bash
+
+CMD ["./wait-for-it.sh"]
