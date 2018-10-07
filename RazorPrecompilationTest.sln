@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{B086AC88
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F4F876F-F1A5-4049-9DA6-E1D656D18C1D}"
 	ProjectSection(SolutionItems) = preProject
+		get-login-page.sh = get-login-page.sh
 		get-nginx-access-logs.cmd = get-nginx-access-logs.cmd
 	EndProjectSection
 EndProject
