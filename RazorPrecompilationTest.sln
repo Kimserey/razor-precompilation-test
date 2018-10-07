@@ -21,6 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		get-nginx-access-logs.cmd = get-nginx-access-logs.cmd
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "warmup", "warmup", "{AC67F1AC-8EB1-4136-84A8-C3A274ABEC21}"
+	ProjectSection(SolutionItems) = preProject
+		warmup\wait-for-it.sh = warmup\wait-for-it.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

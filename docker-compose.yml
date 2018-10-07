@@ -2,22 +2,36 @@ version: '3.4'
 
 services:
   api:
-    image: local/api
-    container_name: razor_api
+    image: razor-test/api
+    container_name: razor-test-api
     build:
       context: .
       dockerfile: Api/Dockerfile
 
+  api-warmup:
+    image: razor-test/api-warmup
+    container_name: razor-test-api-warmup
+    depends_on:
+      - "api"
+    command: ["./warmup/wait-for-it.sh", "api/api/healthcheck:80", "--", "curl", "-o /dev/null", "http://api/api/values"]
+
   website:
-    image: local/website
-    container_name: razor_website
+    image: razor-test/website
+    container_name: razor-test-website
     build:
       context: .
       dockerfile: RazorPrecompilationTest/Dockerfile
 
+  website-warmup:
+    image: razor-test/website-warmup
+    container_name: razor-test-website-warmup
+    depends_on:
+      - "website"
+    command: ["./warmup/wait-for-it.sh", "website/healthcheck:80", "--", "curl", "-o /dev/null", "http://website/account/login"]
+
   proxy:
-    image: local/proxy
-    container_name: razor_proxy_nginx
+    image: razor-test/proxy
+    container_name: razor-test-proxy
     build:
       context: .
       dockerfile: nginx/Dockerfile
